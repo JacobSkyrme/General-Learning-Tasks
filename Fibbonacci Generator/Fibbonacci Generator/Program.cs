@@ -26,18 +26,17 @@ namespace Fibbonacci_Generator
                 }
             }
 
+            UInt64 a = 0;
+            UInt64 b = 1;
+            UInt64 fibbiOutput = 0;
+            Console.Write(a + ", ");
 
-            UInt64[] fibbiArray = new UInt64[amount];
-            fibbiArray[0] = 0;
-            fibbiArray[1] = 1;
-
-            for (int i = 2; i < amount; i++)
+            for (int i = 0; i < amount -1; i++)
             {
-                fibbiArray[i] = fibbiArray[i - 2] + fibbiArray[i - 1];
-            }
-            for (int i = 0; i < fibbiArray.Length; i++)
-            {
-                Console.Write(fibbiArray[i].ToString() + ", ");
+                fibbiOutput = a + b;
+                Console.Write(fibbiOutput + ", ");
+                a = b;
+                b = fibbiOutput;
             }
             Console.ReadLine();
 
